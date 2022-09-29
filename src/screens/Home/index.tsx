@@ -8,12 +8,12 @@ export function Home() {
     <View style={styles.container}>
       <LogoImgSvg/>
 
-      <View>
-        <Text>
+      <View style={styles.content}>
+        <Text style={styles.title}>
           Accesse sua conta
         </Text>
 
-        <View>
+        <View >
           <TextInput placeholder='E-mail'>
 
           </TextInput>

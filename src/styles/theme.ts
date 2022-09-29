@@ -21,19 +21,20 @@ export default {
 
     white:'#fff',
 
-    fonts: {
-      heading: 'Roboto_700Bold',
-      body: 'Roboto_400Regular',
-    },
+   
+  },
+  fonts: {
+    heading: 'Roboto_700Bold',
+    body: 'Roboto_400Regular',
+  },
 
-    fontSizes: {
-      xs: 12,
-      sm: 14,
-      md: 16,
-      lg: 20,
-    },
-    sizes: {
-      14: 56
-    }
+  fontSizes: {
+    xs: 12,
+    sm: 14,
+    md: 16,
+    lg: 20,
+  },
+  sizes: {
+    14: 56
   }
 }
