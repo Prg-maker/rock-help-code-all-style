@@ -20,13 +20,5 @@ export const styles = StyleSheet.create({
     fontSize:theme.fontSizes.lg,
     marginBottom:39,
   },
-  input:{
-    width:364,
-    height:56,
-    borderRadius:6,
-    paddingLeft:18,
-    backgroundColor:theme.colors.gray[700],
-    fontSize:theme.fontSizes.md,
-    fontFamily:theme.fonts.body
-  }
+
 });
