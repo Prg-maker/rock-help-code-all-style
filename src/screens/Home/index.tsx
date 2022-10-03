@@ -1,7 +1,9 @@
 import React from 'react';
 import { Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import LogoImgSvg from '../../assets/Logo.svg'
+import theme from '../../styles/theme';
 import { styles } from './styles';
+
 
 export function Home() {
   return (
@@ -14,7 +16,7 @@ export function Home() {
         </Text>
 
         <View >
-          <TextInput placeholder='E-mail'>
+          <TextInput  style={styles.input} placeholder='E-mail' placeholderTextColor={theme.colors.gray[300]}>
 
           </TextInput>
 
