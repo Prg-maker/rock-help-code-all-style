@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     alignItems:'center',
     borderRadius:6,
     paddingLeft:18,
-
+    marginTop:16
     
   },
   input:{
@@ -22,7 +22,5 @@ export const styles = StyleSheet.create({
 
     color: theme.colors.gray[300]
   },
-  icon:{
-
-  }
+  
 });

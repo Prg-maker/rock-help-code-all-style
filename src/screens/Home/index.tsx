@@ -1,7 +1,10 @@
-import { Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import LogoImgSvg from '../../assets/Logo.svg'
 import { styles } from './styles';
 import { Input } from '../../components/Input';
+import { EnvelopeSimple , Key} from 'phosphor-react-native';
+import theme from '../../styles/theme';
+import { Button } from '../../components/Button';
 
 export function Home() {
   return (
@@ -13,18 +16,21 @@ export function Home() {
           Accesse sua conta
         </Text>
 
-        <View >
+        <View>
 
-          <Input/>
+          <Input placeholder='E-mail'>
+            <EnvelopeSimple size={24} color={theme.colors.gray[300]}/>
+          </Input>
 
-          <TextInput placeholder='Senha'>
+          <Input placeholder='Senha'>
+            <Key size={24} color={theme.colors.gray[300]}/>
+          </Input>
 
-          </TextInput>
 
-
-          <TouchableOpacity>
-            <Text>Entrar</Text>
-          </TouchableOpacity>
+         
+          <Button 
+            title='Entrar'
+          />
 
 
         </View>

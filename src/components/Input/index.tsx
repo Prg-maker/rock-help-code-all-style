@@ -5,11 +5,20 @@ import theme from '../../styles/theme';
 
 import { styles } from './styles';
 
-export function Input() {
+interface InputProps{
+  children?: React.ReactNode,
+  placeholder:string;
+}
+
+
+export function Input({children , placeholder}:InputProps) {
   return (
     <View style={styles.container}>
-      <EnvelopeSimple size={24} color={theme.colors.gray[300]} style={styles.icon}/>
-      <TextInput  style={styles.input} placeholder='E-mail' placeholderTextColor={theme.colors.gray[300]}/>
+
+      {
+        children
+      }
+      <TextInput  style={styles.input} placeholder={placeholder} placeholderTextColor={theme.colors.gray[300]}/>
 
 
     </View>
