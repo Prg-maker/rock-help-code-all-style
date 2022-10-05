@@ -44,7 +44,11 @@ export const styles = StyleSheet.create({
     color:theme.colors.gray[300],
     fontSize:theme.fontSizes.xs,
 
-  }
+  },
+
+
+
+  
   
 
 });
