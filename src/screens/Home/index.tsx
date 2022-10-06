@@ -12,7 +12,11 @@ interface PropsOrderHome extends OrderProps{
   orderId:string
 }
 
-export function Details() {
+interface Verification{
+  validation: 'inProgress' | 'Finished';
+}
+
+export function Home() {
 
   const [orders , setOrders] = useState<PropsOrderHome[]>([
     {
@@ -24,6 +28,13 @@ export function Details() {
     },
     {
       orderId:'2',
+      patrimony: 123,
+      date: '12/04/2021',
+      status: 'inProgress'  ,
+      hours: '12'
+    },
+    {
+      orderId:'3',
       patrimony: 123,
       date: '12/04/2021',
       status: 'inProgress'  ,
@@ -41,7 +52,14 @@ export function Details() {
     seIstSelected(false)
   }
 
-  
+  function handleVerification(data:Verification){
+    if(data.validation == 'inProgress'){
+      return orders.filter(order=> order.status === 'inProgress')
+    }
+    return  orders.filter(order=> order.status === 'Finished')
+  }
+
+
   return (
     <View style={styles.container}>
       <Heading/>
@@ -53,11 +71,20 @@ export function Details() {
         </Text>
 
 
-        <Text style={styles.numberSolicitation}>
-          {
-            orders.length
-          }
-        </Text>
+        {
+          isSelected ? 
+          <Text style={styles.numberSolicitation}>
+            {
+              handleVerification({validation:'inProgress'}).length
+            }
+          </Text> 
+          : 
+          <Text style={styles.numberSolicitation}>
+            {
+              handleVerification({validation:'Finished'}).length
+            }
+          </Text> 
+        }
 
 
       </View>
@@ -95,21 +122,17 @@ export function Details() {
 
       {isSelected? 
           <FlatList
-          data={orders.filter(order=> order.status === 'inProgress')}
+          data={handleVerification({validation:'inProgress'})}
           keyExtractor={item => item.orderId}
           renderItem={({item})=> {
             return(
               <>
-                {
-                  item.status =='inProgress' &&
-                  <Order
-                  date={item.date}
-                  hours={item.hours}
-                  patrimony={item.patrimony}
-                  status={item.status}
-                  /> 
-                }
-              
+                <Order
+                date={item.date}
+                hours={item.hours}
+                patrimony={item.patrimony}
+                status={item.status}
+                /> 
               </>
             )
           }} 
@@ -123,20 +146,18 @@ export function Details() {
           }}
         />
       : <FlatList
-          data={orders.filter(order=> order.status === 'Finished')}
+          data={handleVerification({validation:'Finished'})}
           keyExtractor={item => item.orderId}
           renderItem={({item})=> {
             return(
               <>
-                {
-                  item.status =='Finished' &&
-                  <Order
-                  date={item.date}
-                  hours={item.hours}
-                  patrimony={item.patrimony}
-                  status={item.status}
-                  /> 
-                }
+                  
+                <Order
+                date={item.date}
+                hours={item.hours}
+                patrimony={item.patrimony}
+                status={item.status}
+                /> 
               
               </>
             )

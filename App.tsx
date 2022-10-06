@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View , Image } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { AppLoading } from './src/components/AppLoading';
 import {Roboto_400Regular, Roboto_700Bold , useFonts} from '@expo-google-fonts/roboto'
-import { Home } from './src/screens/SingIn';
-import { Details } from './src/screens/Home';
+import { SingIn } from './src/screens/SingIn';
+import { Home } from './src/screens/Home';
+import { Register } from './src/screens/Register';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -15,7 +15,7 @@ export default function App() {
    <> 
     <StatusBar style='light' translucent backgroundColor='transparent'/>
     {
-      !fontsLoaded ? <AppLoading/> :<Details/>
+      !fontsLoaded ? <AppLoading/> :<Register/>
     }
    </>
 

@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, View } from 'react-native';
 import LogoImgSvg from '../../assets/Logo.svg'
 import { styles } from './styles';
 import { Input } from '../../components/Input';
@@ -6,7 +6,7 @@ import { EnvelopeSimple , Key} from 'phosphor-react-native';
 import theme from '../../styles/theme';
 import { Button } from '../../components/Button';
 
-export function Home() {
+export function SingIn() {
   return (
     <View style={styles.container}>
       <LogoImgSvg/>
