@@ -3,24 +3,16 @@ import theme from '../../styles/theme';
 
 export const styles = StyleSheet.create({
   container: {
-    maxWidth:364,
-    height:56,
+    height:'80%',
+    width:'89%',
+    
     backgroundColor:theme.colors.gray[700],
     flexDirection:'row',
     alignItems:'center',
     borderRadius:6,
     paddingLeft:18,
-    marginTop:16
-    
-  },
-  input:{
-    width:'100%',
-    height:'100%',
-    paddingLeft:18,
-    fontSize:theme.fontSizes.md,
-    fontFamily:theme.fonts.body,
+    marginTop:16,
+    color:theme.colors.white,
 
-    color: theme.colors.gray[300]
-  },
-  
+  }
 });
