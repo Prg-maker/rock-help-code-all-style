@@ -18,7 +18,7 @@ export function Details() {
       orderId:'1',
       patrimony: 123,
       date: '12/04/2021',
-      status: 'inProgress'  ,
+      status: 'Finished'  ,
       hours: '12'
     },
     {
@@ -27,38 +27,10 @@ export function Details() {
       date: '12/04/2021',
       status: 'inProgress'  ,
       hours: '12'
-    },
-    {
-      orderId:'3',
-      patrimony: 123,
-      date: '12/04/2021',
-      status: 'inProgress'  ,
-      hours: '12'
-    },
-    {
-      orderId:'4',
-      patrimony: 123,
-      date: '12/04/2021',
-      status: 'inProgress'  ,
-      hours: '12'
-    },
-    {
-      orderId:'5',
-      patrimony: 123,
-      date: '12/04/2021',
-      status: 'Finished'  ,
-      hours: '12'
-    },
-    {
-      orderId:'6',
-      patrimony: 123,
-      date: '12/04/2021',
-      status: 'Finished'  ,
-      hours: '12'
     }
   ])
 
-  const [isSelected ,seIstSelected] = useState(false)
+  const [isSelected ,seIstSelected] = useState(true)
 
   function toggleIsSelectedForTrue(){
     seIstSelected(true)
@@ -122,7 +94,7 @@ export function Details() {
 
       {isSelected? 
           <FlatList
-          data={orders}
+          data={orders.filter(order=> order.status === 'inProgress')}
           keyExtractor={item => item.orderId}
           renderItem={({item})=> {
             return(
@@ -150,7 +122,7 @@ export function Details() {
           }}
         />
       : <FlatList
-          data={orders}
+          data={orders.filter(order=> order.status === 'Finished')}
           keyExtractor={item => item.orderId}
           renderItem={({item})=> {
             return(
@@ -173,7 +145,10 @@ export function Details() {
 
       ListEmptyComponent={()=> {
         return(
-          <MessageAlternative/>
+          <>
+            <MessageAlternative/>
+          </>
+
         )
       }}
     />}
