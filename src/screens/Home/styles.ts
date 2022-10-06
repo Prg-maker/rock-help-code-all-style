@@ -47,5 +47,10 @@ export const styles = StyleSheet.create({
   },
   contentContainerStyle:{
     paddingBottom:25,
+  },
+  containerButton:{
+    justifyContent:'center',
+    alignItems:'center',
+    paddingBottom:20
   }
 });

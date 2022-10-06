@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import { Button } from '../../components/Button';
 import { Heading } from '../../components/Heading';
 import { MessageAlternative } from '../../components/MessageAlternative';
 import { Order , OrderProps } from '../../components/Order';
@@ -152,7 +153,17 @@ export function Details() {
         )
       }}
     />}
-     
+
+
+
+      <View
+        style={styles.containerButton}
+      >
+        <Button
+          title='Nova solicitação'
+        />
+      </View>
+    
 
     </View>
   );
