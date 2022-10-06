@@ -14,11 +14,11 @@ interface PropsOrderHome extends OrderProps{
 export function Details() {
 
   const [orders , setOrders] = useState<PropsOrderHome[]>([
-   /* {
+    {
       orderId:'1',
       patrimony: 123,
       date: '12/04/2021',
-      status: 'Finished'  ,
+      status: 'inProgress'  ,
       hours: '12'
     },
     {
@@ -55,7 +55,7 @@ export function Details() {
       date: '12/04/2021',
       status: 'Finished'  ,
       hours: '12'
-    }*/
+    }
   ])
 
   const [isSelected ,seIstSelected] = useState(false)
@@ -66,8 +66,9 @@ export function Details() {
 
   function toggleIsSelectedForFalse(){
     seIstSelected(false)
-
   }
+
+  
   return (
     <View style={styles.container}>
       <Heading/>
@@ -80,7 +81,9 @@ export function Details() {
 
 
         <Text style={styles.numberSolicitation}>
-          2
+          {
+            orders.length
+          }
         </Text>
 
 
@@ -114,17 +117,27 @@ export function Details() {
 
       </View>
 
-        <FlatList
+        
+
+
+      {isSelected? 
+          <FlatList
           data={orders}
           keyExtractor={item => item.orderId}
           renderItem={({item})=> {
             return(
-              <Order
-              date={item.date}
-              hours={item.hours}
-              patrimony={item.patrimony}
-              status={item.status}
-              />
+              <>
+                {
+                  item.status =='inProgress' &&
+                  <Order
+                  date={item.date}
+                  hours={item.hours}
+                  patrimony={item.patrimony}
+                  status={item.status}
+                  /> 
+                }
+              
+              </>
             )
           }} 
           contentContainerStyle={styles.contentContainerStyle}
@@ -136,7 +149,35 @@ export function Details() {
             )
           }}
         />
+      : <FlatList
+          data={orders}
+          keyExtractor={item => item.orderId}
+          renderItem={({item})=> {
+            return(
+              <>
+                {
+                  item.status =='Finished' &&
+                  <Order
+                  date={item.date}
+                  hours={item.hours}
+                  patrimony={item.patrimony}
+                  status={item.status}
+                  /> 
+                }
+              
+              </>
+            )
+          }} 
+          contentContainerStyle={styles.contentContainerStyle}
+          showsVerticalScrollIndicator={false}
 
+      ListEmptyComponent={()=> {
+        return(
+          <MessageAlternative/>
+        )
+      }}
+    />}
+     
 
     </View>
   );
