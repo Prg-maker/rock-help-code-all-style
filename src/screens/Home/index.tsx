@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { Heading } from '../../components/Heading';
+import { Order } from '../../components/Order';
 import theme from '../../styles/theme';
 
 import { styles } from './styles';
@@ -62,6 +63,23 @@ export function Details() {
         </TouchableOpacity>
 
       </View>
+
+        
+      <Order
+        patrimony={147456}
+        date='20/01/22'
+        hours='14'
+        status='Finished'
+      />
+
+      <Order
+        patrimony={147456}
+        date='20/01/22'
+        hours='14'
+        status='inProgress'
+      />
+
+
     </View>
   );
 }
