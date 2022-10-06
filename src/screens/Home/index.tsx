@@ -1,12 +1,62 @@
 import React, { useState } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { Heading } from '../../components/Heading';
-import { Order } from '../../components/Order';
+import { MessageAlternative } from '../../components/MessageAlternative';
+import { Order , OrderProps } from '../../components/Order';
 import theme from '../../styles/theme';
 
 import { styles } from './styles';
 
+interface PropsOrderHome extends OrderProps{
+  orderId:string
+}
+
 export function Details() {
+
+  const [orders , setOrders] = useState<PropsOrderHome[]>([
+   /* {
+      orderId:'1',
+      patrimony: 123,
+      date: '12/04/2021',
+      status: 'Finished'  ,
+      hours: '12'
+    },
+    {
+      orderId:'2',
+      patrimony: 123,
+      date: '12/04/2021',
+      status: 'inProgress'  ,
+      hours: '12'
+    },
+    {
+      orderId:'3',
+      patrimony: 123,
+      date: '12/04/2021',
+      status: 'inProgress'  ,
+      hours: '12'
+    },
+    {
+      orderId:'4',
+      patrimony: 123,
+      date: '12/04/2021',
+      status: 'inProgress'  ,
+      hours: '12'
+    },
+    {
+      orderId:'5',
+      patrimony: 123,
+      date: '12/04/2021',
+      status: 'Finished'  ,
+      hours: '12'
+    },
+    {
+      orderId:'6',
+      patrimony: 123,
+      date: '12/04/2021',
+      status: 'Finished'  ,
+      hours: '12'
+    }*/
+  ])
 
   const [isSelected ,seIstSelected] = useState(false)
 
@@ -64,20 +114,28 @@ export function Details() {
 
       </View>
 
-        
-      <Order
-        patrimony={147456}
-        date='20/01/22'
-        hours='14'
-        status='Finished'
-      />
+        <FlatList
+          data={orders}
+          keyExtractor={item => item.orderId}
+          renderItem={({item})=> {
+            return(
+              <Order
+              date={item.date}
+              hours={item.hours}
+              patrimony={item.patrimony}
+              status={item.status}
+              />
+            )
+          }} 
+          contentContainerStyle={styles.contentContainerStyle}
+          showsVerticalScrollIndicator={false}
 
-      <Order
-        patrimony={147456}
-        date='20/01/22'
-        hours='14'
-        status='inProgress'
-      />
+          ListEmptyComponent={()=> {
+            return(
+              <MessageAlternative/>
+            )
+          }}
+        />
 
 
     </View>

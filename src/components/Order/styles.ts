@@ -46,5 +46,6 @@ export const styles = StyleSheet.create({
     borderRadius:100,
     marginLeft:'30%'
 
-  }
+  },
+  
 });

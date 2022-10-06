@@ -5,7 +5,7 @@ import theme from "../../styles/theme";
 
 import { styles } from "./styles";
 
-interface OrderProps {
+export interface OrderProps {
   patrimony: number;
   date: string;
   status: "inProgress" | "Finished";

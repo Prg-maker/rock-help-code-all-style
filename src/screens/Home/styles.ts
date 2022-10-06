@@ -45,10 +45,7 @@ export const styles = StyleSheet.create({
     fontSize:theme.fontSizes.xs,
 
   },
-
-
-
-  
-  
-
+  contentContainerStyle:{
+    paddingBottom:25,
+  }
 });
