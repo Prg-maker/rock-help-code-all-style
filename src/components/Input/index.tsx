@@ -4,6 +4,7 @@ import theme from '../../styles/theme';
 
 import { styles } from './styles';
 
+
 interface InputProps extends  TextInputProps{
   children?: React.ReactNode,
   placeholder:string;

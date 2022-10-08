@@ -9,5 +9,9 @@ export const styles = StyleSheet.create({
   form:{
     flex:1,
     alignItems:'center',
+  },
+  containerButton:{
+    alignItems:'center',
+    paddingBottom:20
   }
 });

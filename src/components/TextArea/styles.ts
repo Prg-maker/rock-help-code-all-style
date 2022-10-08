@@ -13,6 +13,10 @@ export const styles = StyleSheet.create({
     paddingLeft:18,
     marginTop:16,
     color:theme.colors.white,
+    textAlignVertical:'top',
+    paddingTop:21,
+    fontSize: theme.fontSizes.md,
+    
 
   }
 });
