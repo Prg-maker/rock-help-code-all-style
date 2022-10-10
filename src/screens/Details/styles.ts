@@ -7,10 +7,7 @@ export const styles = StyleSheet.create({
     backgroundColor:theme.colors.gray[700],
 
   },
-  header:{
-    backgroundColor:theme.colors.gray[600],
-    paddingBottom:35
-  },
+
   status:{
     backgroundColor:theme.colors.gray[500],
     justifyContent:'center',
