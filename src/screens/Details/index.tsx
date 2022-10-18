@@ -12,12 +12,7 @@ export function Details() {
     <View style={styles.container}>
         <HeaderDetails/>
 
-      <View style={styles.status}>
-        <CircleWavyCheck  style={styles.icon} size={32} color={theme.colors.green[300]} />
-        <Text style={styles.textStatus}>
-          FINALIZADO
-        </Text>
-      </View>
+      
 
       <DetailCards/>
 
